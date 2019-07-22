@@ -31,14 +31,29 @@ When they do click one, update the player's score counter.
 <body>
     <h1>Crystals Collector!</h1>
     <hr>
-    <h3>Directions for Game</h3>
-    <p id="Wins"></p>
-    <p id="Losses"></p>
-    <p id="targetScore"></p>
-    <p id="counter"></p>
-    <div class="crystals">
+    <!-- start of directions -->
+    <div class="directions">
+        <p>
+            1. The game will generate a random number under Target Score.
+            <br>
+            <br>
+            2. Each box has a hidden number value, by clicking it you are adding that value to your Score.
+            <br>
+            <br>
+            3. If you match your Score to the Target Score, you WIN! Go Over, and you lose!
+            <br>
+            <br>
+        </p>
+    </div>
+    <!-- end of directions -->
 
-
+    <!-- Scoreboard -->
+    <div class="row">
+        <p id="Wins"></p>
+        <p id="Losses"></p>
+        <p id="targetScore"></p>
+        <p id="counter"></p>
+        <div class="crystals"></div>
     </div>
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>

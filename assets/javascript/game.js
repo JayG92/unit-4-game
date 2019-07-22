@@ -51,7 +51,7 @@ var resetGame = function () {
 
         
     }
-    $("#counter").html("Your Number " + counter);
+    $("#counter").html("Score: " + counter);
 }
 
 
