@@ -2,7 +2,7 @@
 var wins = 0;
 var losses = 0;
 var targetScore;
-var counter = 0;
+var counter = 0 ;
 
 
 // this code allows page to show up wins,losses and target
@@ -29,7 +29,7 @@ var resetGame = function () {
     $("#targetScore").html("Target Score: " + target_score);
     $("#Wins").html("Wins: " + wins);
     $("#Losses").html("Losses: " + losses);
-    $("#counter").html("Your Number " + counter);
+    // $("#counter").html("Your Number " + counter);
 
 
 
@@ -49,7 +49,9 @@ var resetGame = function () {
         $(".crystals").append(crystal);
         console.log("Crystal test");
 
+        
     }
+    $("#counter").html("Your Number " + counter);
 }
 
 
@@ -58,6 +60,9 @@ resetGame();
 $(document).on("click", ".crystal", function () {
     var crystalValue = parseInt($(this).attr("data-crystalvalue"));
     counter += crystalValue;
+
+    $("#counter").html(counter);
+    $("#counter").html("Your Number " + counter);
 
     if (counter > target_score) {
         losses++;
