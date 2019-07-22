@@ -1,53 +1,83 @@
 // variables for Page.
-var wins;
-var losses;
+var wins = 0;
+var losses = 0;
 var targetScore;
 var counter = 0;
 
 
+// this code allows page to show up wins,losses and target
+// $("#Wins").html("Wins:", "");
+// $("#Losses").html("Losses:", "");
+// $("#targetScore").html("Target Score: " + target_score);
+
+
+
+
 // creates random target score.
-target_score = Math.floor(Math.random() * 99) + 21;
+// target_score = Math.floor(Math.random() * 99) + 21;
 
 // this code allows page to show up wins,losses and target
-$("#Wins").html("Wins:", "");
-$("#Losses").html("Losses:", "");
-$("#targetScore").html("Target Score: " + target_score);
+// $("#Wins").html("Wins:", "");
+// $("#Losses").html("Losses:", "");
+
+// resets
+var resetGame = function () {
+    // this code empties data and resets with new data
+    $(".crystals").empty();
+    target_score = Math.floor(Math.random() * 99) + 21;
+
+    $("#targetScore").html("Target Score: " + target_score);
+    $("#Wins").html("Wins: " + wins);
+    $("#Losses").html("Losses: " + losses);
+    $("#counter").html("Your Number " + counter);
 
 
 
-// 4 crystals on the page.
-for (var i = 0; i < 4; i++) {
-    var randomNumber = Math.floor(Math.random() * 11) + 1;
-    console.log(randomNumber);
-    var crystal = $("<div>");
-    crystal.attr({
-        // below creats an attribute for "crystal"
-        "class": 'crystal',
-        "data-crystalvalue": randomNumber
+
+    // 4 crystals on the page.
+    for (var i = 0; i < 4; i++) {
+        var randomNumber = Math.floor(Math.random() * 11) + 1;
+        console.log(randomNumber);
+        var crystal = $("<div>");
+        crystal.attr({
+            // below creats an attribute for "crystal"
+            "class": 'crystal',
+            "data-crystalvalue": randomNumber
 
 
-    });
-    $(".crystals").append(crystal);
-    console.log("Crystal test");
+        });
+        $(".crystals").append(crystal);
+        console.log("Crystal test");
+
+    }
 }
+
+
+resetGame();
 // This code allows the 4 crystals to be clicked with a random number result
-$(".crystal").on("click", function () {
+$(document).on("click", ".crystal", function () {
     var crystalValue = parseInt($(this).attr("data-crystalvalue"));
     counter += crystalValue;
 
     if (counter > target_score) {
+        losses++;
         console.log("try again");
+        $("#Losses").html(losses);
+        counter = 0;
+        // resetting ifs
+        resetGame();
     }
     else if (counter === target_score) {
+        wins++;
         console.log("You win!")
-        
+        $("#Wins").html(wins);
+        counter = 0;
+        // resetting ifs
+        resetGame();
+
+
     }
-
-
     console.log(counter)
-
-
-
 
 
 });
