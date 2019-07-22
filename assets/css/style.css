@@ -5,31 +5,50 @@
     
 }
 
+#crystal0.crystal{
+    background: blue;
+}
+#crystal1.crystal{
+    background: green;
+}
+#crystal2.crystal{
+    background: yellow;
+}
+#crystal3.crystal{
+    background: red;
+}
+
 
 
 .crystal{
     border: 1px solid rgb(30, 219, 30);
+    border-radius: 5px;
     height: 200px;
     width: 200px;background: red;
+    
 
 
 }
 
 .directions{
     width: 300px;
-    background-color: rgb(150, 169, 173);
-    border-radius: 3px;
+    background-color: rgb(218, 180, 76);
+    border-radius: 5px;
     
 
 }
 
 .row{
     background-color: cyan;
-    width: 200px;
-    border-radius: 2px;
+    width: 150px;
+    border-radius: 5px;
 }
 
 body {
 background-color: rgb(39, 189, 216);
 
+}
+
+button{
+    background: white;
 }
