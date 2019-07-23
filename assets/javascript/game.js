@@ -21,6 +21,7 @@ var resetGame = function () {
     // this code empties data and resets with new data
     $(".crystals").empty();
     target_score = Math.floor(Math.random() * 99) + 21;
+    console.log(target_score)
 
     $("#targetScore").html("Target Score: " + target_score);
     $("#Wins").html("Wins: " + wins);
